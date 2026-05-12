@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>中華菜系測驗</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="paper-texture-overlay"></div>
+    <div class="container fade-in-active">
+        <div id="transition-overlay" class="hidden"></div>
+        <div id="mouse-ink-container"></div>
+        <div id="background-birds"></div>
+        <button id="music-toggle" class="music-btn" onclick="toggleMusic()">🎵</button>
+        <div class="scroll-header-wrap">
+            <div class="scroll-header">
+                <div class="scroll-stick top"></div>
+                <div class="tassel left"></div>
+                <div class="tassel right"></div>
+                <h1>菜系探尋</h1>
+                <div class="scroll-stick bottom"></div>
+            </div>
+        </div>
+        <div class="progress-container hidden">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div id="start-screen" class="fade-in-active">
+            <p id="start-description" class="description" style="text-align: center; border-left: none; background: transparent; min-height: 3.6em;"></p>
+            <button id="start-btn" class="option-btn hidden" onclick="startQuiz()" style="width: auto; margin: 20px auto; padding: 15px 40px;">開啟探尋之旅</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <h2 id="question-text">載入中...</h2>
+            <div id="options-container"></div>
+        </div>
+
+        <div id="loading-screen" class="hidden">
+            <div class="loader"></div>
+            <p id="loading-text">正在分析您的菜系人格...</p>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <div id="result-animation-container"></div>
+            <div class="enso-circle"></div>
+            <div class="result-glow"></div>
+            <div class="deco-corner tl"></div>
+            <div class="deco-corner tr"></div>
+            <div class="deco-corner bl"></div>
+            <div class="deco-corner br"></div>
+            <div class="result-seal">合格</div>
+            <h2>測驗結果</h2>
+            <div class="cuisine-title" id="cuisine-name"></div>
+            <img id="cuisine-img" src="" alt="菜系插畫">
+            <p class="description" id="cuisine-desc"></p>
+            <button class="option-btn" onclick="saveResultImage()" style="background-color: #5d0000; color: white;">保存探尋結果</button>
+            <button class="option-btn" onclick="location.reload()">重新測驗</button>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="sketch.js"></script>
+</body>
+</html>
